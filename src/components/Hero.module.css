@@ -158,3 +158,22 @@
   .scrollLabel { writing-mode: horizontal-tb; }
   .scrollLine { display: none; }
 }
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 6rem 1.2rem 3rem;
+  }
+  .name {
+    font-size: clamp(3rem, 13vw, 4.5rem);
+    letter-spacing: -0.02em;
+  }
+  .tagline {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+  .termBody {
+    padding: 1rem;
+    font-size: 0.8rem;
+    min-height: 200px;
+  }
+}

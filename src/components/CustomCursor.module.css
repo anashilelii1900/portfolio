@@ -19,3 +19,9 @@
   pointer-events: none;
   z-index: 99999;
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .ring, .dot {
+    display: none;
+  }
+}

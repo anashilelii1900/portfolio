@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styles from './About.module.css';
-import avatarImg from '../assets/avatar.png';
+import avatarImg from '../assets/avatar.jpg';
 
 const SKILLS = [
   { label: 'React / Next.js', pct: 95 },
