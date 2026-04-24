@@ -1,4 +1,4 @@
-import { useRef, useCallback } from 'react';
+import { useCallback } from 'react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import styles from './BentoGrid.module.css';
 

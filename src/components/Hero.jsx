@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import styles from './Hero.module.css';
 
@@ -15,40 +15,34 @@ const LINES = [
   { type: 'success', text: '✓ Build complete — ready to ship.' },
 ];
 
-function TerminalLine({ line }) {
-  if (line.type === 'comment') return <div className={styles.comment}>{line.text}</div>;
-  if (line.type === 'prompt')  return <div><span className={styles.prompt}>{line.label} $</span> {line.text}</div>;
-  if (line.type === 'success') return <div className={styles.success}>{line.text}</div>;
-  return <div className={styles.keyLine}>{line.text}</div>;
-}
-
 export default function Hero() {
   const terminalRef = useRef(null);
   const indexRef = useRef(0);
 
-  const printNext = useCallback(() => {
-    if (!terminalRef.current) return;
-    const i = indexRef.current;
-    if (i >= LINES.length) return;
-
-    const el = document.createElement('div');
-    el.className = styles.termLine;
-    const line = LINES[i];
-    if (line.type === 'comment') el.style.color = '#6a9955';
-    if (line.type === 'success') el.style.color = '#00ff9d';
-    if (line.type === 'prompt')  el.innerHTML = `<span style="color:var(--accent)">${line.label} $</span> ${line.text}`;
-    else el.textContent = line.text;
-
-    terminalRef.current.appendChild(el);
-    indexRef.current++;
-    terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
-    setTimeout(printNext, 130 + Math.random() * 80);
-  }, []);
-
   useEffect(() => {
-    const t = setTimeout(printNext, 800);
+    let t;
+    function printNext() {
+      if (!terminalRef.current) return;
+      const i = indexRef.current;
+      if (i >= LINES.length) return;
+
+      const el = document.createElement('div');
+      el.className = styles.termLine;
+      const line = LINES[i];
+      if (line.type === 'comment') el.style.color = '#6a9955';
+      if (line.type === 'success') el.style.color = '#00ff9d';
+      if (line.type === 'prompt')  el.innerHTML = `<span style="color:var(--accent)">${line.label} $</span> ${line.text}`;
+      else el.textContent = line.text;
+
+      terminalRef.current.appendChild(el);
+      indexRef.current++;
+      terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
+      t = setTimeout(printNext, 130 + Math.random() * 80);
+    }
+
+    t = setTimeout(printNext, 800);
     return () => clearTimeout(t);
-  }, [printNext]);
+  }, []);
 
   const titleVariants = {
     hidden: { opacity: 0, y: 60 },

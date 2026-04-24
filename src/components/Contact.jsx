@@ -1,5 +1,5 @@
 import { useRef, useCallback } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 import styles from './Contact.module.css';
 
 export default function Contact({ onOpenModal }) {
