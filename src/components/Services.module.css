@@ -13,7 +13,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 220px;
+  grid-auto-rows: minmax(220px, auto);
   gap: 1.25rem;
 }
 
@@ -55,6 +55,10 @@
 }
 
 @media (max-width: 600px) {
-  .grid { grid-template-columns: 1fr; }
-  .large, .medium, .small { grid-column: span 1; }
+  .section { padding: 4rem 1.2rem; }
+  .grid { 
+    grid-template-columns: 1fr; 
+    grid-auto-rows: auto;
+  }
+  .large, .medium, .small { grid-column: span 1; grid-row: auto; }
 }

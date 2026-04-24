@@ -109,3 +109,23 @@
   .item, .item.left { flex-direction: column; padding: 0 0 0 3.5rem; }
   .item.right .card, .item.left .card { margin: 0; width: 100%; }
 }
+
+@media (max-width: 480px) {
+  .section { padding: 4rem 1.2rem; }
+  
+  .line { left: 0.2rem; }
+  .dot  { left: 0.2rem; }
+  
+  .item, .item.left { padding: 0 0 0 1.8rem; margin-bottom: 2.5rem; }
+  
+  .card { padding: 1.2rem; }
+  
+  .title { 
+    font-size: 1.05rem; 
+    word-break: break-word; 
+  }
+  
+  .desc { 
+    font-size: 0.85rem; 
+  }
+}
