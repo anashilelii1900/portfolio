@@ -1,44 +1,60 @@
 import { useCallback } from 'react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import styles from './BentoGrid.module.css';
+import vehicleImg from '../assets/vehicle_rental.png';
+import devDuelImg from '../assets/dev_duel.png';
+import medscriptImg from '../assets/medscript.png';
+import fluxifyImg from '../assets/fluxify.png';
 
 const PROJECTS = [
   {
     id: 'p1',
     size: 'large',
-    tag: 'Next.js · 2026',
-    title: 'Fintech Dashboard',
-    desc: 'Comprehensive analytics suite with real-time data visualization and biometric auth.',
+    tag: 'PHP · MVC · MySQL',
+    title: 'VELOX Rental System',
+    desc: 'Premium vehicle rental platform with a burgundy glassmorphic UI and robust MVC architecture.',
+    image: vehicleImg,
     link: '#',
   },
   {
     id: 'p2',
     size: 'medium',
-    tag: 'React · WebGL',
-    title: 'Immersive Architecture',
-    desc: '3D interactive portfolio for a luxury architecture firm.',
+    tag: 'React · Socket.io · Framer',
+    title: 'Dev-Duel',
+    desc: 'Cyber-premium competitive coding arena with real-time match simulations and global leaderboards.',
+    image: devDuelImg,
     link: '#',
   },
   {
     id: 'p3',
     size: 'stat',
-    stat: '10+',
-    label: 'Projects Delivered',
+    stat: '100%',
+    label: 'Code Coverage',
+    accent: true,
   },
   {
     id: 'p4',
     size: 'medium',
-    tag: 'TypeScript · Node',
-    title: 'SaaS Platform',
-    desc: 'Scalable backend supporting 50k+ daily active users.',
+    tag: 'JavaScript · Parser',
+    title: 'Medscript Parser',
+    desc: 'Custom syntax parser for medical records, implementing "creer_patient" clinical data processing.',
+    image: medscriptImg,
     link: '#',
   },
   {
     id: 'p5',
     size: 'stat',
-    stat: '99%',
-    label: 'Client Satisfaction',
-    accent: true,
+    stat: '99.9%',
+    label: 'Uptime achieved',
+  },
+  {
+    id: 'p6',
+    size: 'large',
+    tag: 'JS · Meta-Programming',
+    title: 'Fluxify Template Engine',
+    desc: 'A high-performance JS-based component system with dynamic scope injection and automatic class tagging.',
+    image: fluxifyImg,
+    link: '#',
   },
 ];
 
